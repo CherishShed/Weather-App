@@ -50,15 +50,26 @@
         <img src=<%=neededData.icon %> alt="" />
       </h3>
 
-      <h3 class="windSpeed"><span id="speed">
-          <%=neededData.windSpeed %>
-        </span>m/s</h3>
-      <h3 class="atmospheric-pressure"><span class="pressure">
-          <%=neededData.pressure %>
-        </span>hPa</h3>
-      <h3 class="atmospheric-humidity"><span class="humidity">
-          <%=neededData.humidity %>
-        </span>%</h3>
+      <div class="extras">
+        <div class="extra-value">
+          <h3 class="windSpeed"><span id="speed">
+              <%=neededData.windSpeed %>
+            </span></h3>
+          <h4>m/s</h4>
+        </div>
+        <div class="extra-value">
+          <h3 class="atmospheric-pressure"><span class="pressure">
+              <%=neededData.pressure %>
+            </span></h3>
+          <h4>hPa</h4>
+        </div>
+        <div class="extra-value">
+          <h3 class="atmospheric-humidity"><span class="humidity">
+              <%=neededData.humidity %>
+            </span></h3>
+          <h4>%</h4>
+        </div>
+      </div>
     </div>
   </section>
 
