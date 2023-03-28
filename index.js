@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,8 +44,9 @@ const getNeededData = (weatherData) => {
     let date = today.getDate();
     let day = days[today.getDay()];
     let weatherIcon = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+
     const myData = {
-        country: weatherData.sys.country, city: weatherData.name, date: `${day}, ${date} ${month}`, forecast: weatherData.weather[0].description, icon: weatherIcon, humidity: weatherData.main.humidity, pressure: weatherData.main.pressure, temperature: weatherData.main.temp, windSpeed: weatherData.wind.speed
+        country: weatherData.sys.country, city: weatherData.name, date: `${day}, ${date} ${month}`, forecast: weatherData.weather[0].description, icon: weatherIcon, humidity: weatherData.main.humidity, pressure: weatherData.main.pressure, temperature: weatherData.main.temp, windSpeed: weatherData.wind.speed, background: `images/${weatherData.weather[0].main}.jpg`
     }
     return myData;
 }
