@@ -78,3 +78,19 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.error-body{
+background-color: coral;
+}
+.error{
+    color: whitesmoke;
+    font-size: 4rem;
+}
+.error-redirect{
+    font-size: 2.5rem;
+}
+
+.error-redirect a{
+    color: brown;
+    text-decoration: none;
+}

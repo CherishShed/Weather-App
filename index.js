@@ -15,18 +15,20 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => {
     getWeather("lagos", res)
 })
-
 app.post("/", (req, res) => {
     var place = req.body.search
     getWeather(place, res);
 
+})
+app.use((req, res) => {
+    res.render("error", { root: `${__dirname}/views`, title: "Error", })
 })
 
 const getWeather = (place, res) => {
     var path = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=7ef268a05cee7cdfb64551cea41eb187&units=metric`;
     https.get(path, (response) => {
         if (response.statusCode != 200) {
-            res.send("An Error occured")
+            res.render("error", { root: `${__dirname}/views`, title: "Error", })
         }
         else {
             response.on("data", (data) => {
