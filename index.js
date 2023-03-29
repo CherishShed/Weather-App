@@ -1,5 +1,3 @@
-const os = require("os");
-const fs = require("fs");
 const https = require("https");
 const express = require("express");
 const bodyParser = require("body-parser");
